@@ -1,3 +1,7 @@
 *.class
 *.iml
 .idea
+.classpath
+.project
+pom.xml
+*.prefs
