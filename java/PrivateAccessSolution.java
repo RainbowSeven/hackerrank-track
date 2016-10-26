@@ -17,10 +17,10 @@ public class PrivateAccessSolution {
 
             PrivateAccessSolution.Inner n = new PrivateAccessSolution.Inner();
             o = n.new Private();
-            Method method = o.getClass().getDeclaredMethod("powerof2", new Class[]{int.class});
+            Method method = PrivateAccessSolution.Inner.Private.class.getDeclaredMethod("powerof2", int.class);
             method.setAccessible(true);
-            method.invoke(o, num);
-            
+            System.out.println(String.format("%d is %s", num, method.invoke(o, num)));
+
             System.out.println("An instance of class: " + o.getClass().getCanonicalName() + " has been created");
 
         }//end of try
